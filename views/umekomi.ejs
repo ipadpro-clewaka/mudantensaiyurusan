@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>埋め込み <%= videoTitle %> (<%= channelName %>) (wakametube-Custom)</title>
+  <meta name="description" content="わかめ">
+  <meta property="og:site_name" content="わかめtube | まっしろ">
+  <meta name="theme-color" content="#ff8181">
+  <link rel="shortcut icon" href="/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="author" content="わかめtube | まっしろ">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/plyr.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/slide.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<div class="fu" id="border">
+        <b><p id="realtime"></p></b></div>
+</div>
+    <script id="_wauwnn">var _wau = _wau || []; _wau.push(["classic", "4fc3tv76l2", "wnn"]);</script> <script async src="//waust.at/c.js"></script>
+
+<body>
+<header>
+  <div class="banner">
+   <li><a href="https://www.youtubeeducation.com/embed/<%= videoId %>?autoplay=0&amp;amp;mute=0&amp;amp;controls=1&amp;amp;start=0&amp;amp;origin=https%3A%2F%2Fcreate.kahoot.it&amp;amp;playsinline=1&amp;amp;showinfo=0&amp;amp;rel=0&amp;amp;iv_load_policy=3&amp;amp;modestbranding=1&amp;amp;fs=1&amp;amp;embed_config=%7B%22enc%22%3A%22AYAC26eKG1PsRmbBQ5pF3BlnlDUJrthWq0prNXDPo1Gy91raFyEm_6Wtwrp5OrvtrEQvYIavTax4PiRnoeXb2QDOtYQzeITHy28d72gM5ayZPJ_Jq0rBdIdceejuxK9hGoG-senuY6q8YaLZrtfW5-sSxOJSrKgKSQ%3D%3D%22%2C%22hideTitle%22%3Atrue%7D&amp;amp;enablejsapi=1&amp;amp;widgetid=1" target="_blank">リンクを開く</a></li>
+   <button class="btn btn-link" onclick="window.location.href='/home.pdf'">ホーム🏠</button>
+      <form class="d-flex" action="/s.pdf" method="get">
+          <input id="searchbox" name="q" class="form-control" type="text" placeholder="検索" aria-label="Search" required>
+      </form>
+ </div>
+</header>
+<div id="overlay" class="overlay"></div>
+<div class="vcard">
+<iframe width="100%" height="100%" src="https://www.youtubeeducation.com/embed/<%= videoId %>?autoplay=0&amp;amp;mute=0&amp;amp;controls=1&amp;amp;start=0&amp;amp;origin=https%3A%2F%2Fcreate.kahoot.it&amp;amp;playsinline=1&amp;amp;showinfo=0&amp;amp;rel=0&amp;amp;iv_load_policy=3&amp;amp;modestbranding=1&amp;amp;fs=1&amp;amp;embed_config=%7B%22enc%22%3A%22AYAC26eKG1PsRmbBQ5pF3BlnlDUJrthWq0prNXDPo1Gy91raFyEm_6Wtwrp5OrvtrEQvYIavTax4PiRnoeXb2QDOtYQzeITHy28d72gM5ayZPJ_Jq0rBdIdceejuxK9hGoG-senuY6q8YaLZrtfW5-sSxOJSrKgKSQ%3D%3D%22%2C%22hideTitle%22%3Atrue%7D&amp;amp;enablejsapi=1&amp;amp;widgetid=1" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+<div class="card">
+  <div class="card-channel">
+    <a href="/c.pdf/<%= channelId %>">
+    <div class="container">
+    <img src="<%= channelImage %>" alt="画像">
+    <%= channelName %></a>
+      </div>
+  </div>
+  <div class="toolcard-header">
+    <small class="text-muted"><button class="favorite-btn" onclick="toggleFavorite('<%= videoId %>', '<%= channelId %>', '<%= channelName %>','<%= videoTitle %>')">お気に入り</button></small>
+    <small class="text-muted float-right"><%- (videoViews || "").replace(/views/g, "回再生") %></small>
+  </div>
+  <div class="card-body">
+    <h5><%= videoTitle %></h5>
+      <p><%- (videoDes || "").replace(/\n/g, "<br>") %></p>
+  </div>
+</div>
+<style>
+	* {
+		--plyr-color-main: #ff8181;
+	}
+
+	a {
+		color: #ff8181;
+	}
+  .card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+  .vcard {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 784px;
+  height: 441px;
+}
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header, .card-footer {
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.card-channel {
+  padding: 7px;
+  height: 49px;
+}
+.card-channel p{
+  margin-left: 65px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h5 {
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  margin: 0;
+  white-space: pre-line;
+}
+video {
+  width: 100%;
+  height:auto
+  }
+.toolcard-header {
+  background-color: #FFF5F7;
+  padding: 10px 10px;
+  border-bottom: 0.5px solid #f8e58c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+        .container {
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .container .text {
+            margin-left: 10px;
+        }
+    .comment-box {
+      background-color: #ffffff;
+      width: 85%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      box-sizing: border-box;
+    }
+
+    .comment-box h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 900px;
+      border: none;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .tube-box {
+      background-color: #ffffff;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      box-sizing: border-box;
+</style>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const sideMenu = document.getElementById('side-menu');
+const overlay = document.getElementById('overlay');
+
+function toggleMenu() {
+    sideMenu.classList.toggle('open');
+    overlay.classList.toggle('active');
+}
+
+menuBtn.addEventListener('click', toggleMenu);
+
+overlay.addEventListener('click', toggleMenu);
+  
+const videoId = "<%= videoId %>";
+const channelId = "<%= channelId %>";
+const channelName = "<%= channelName %>";
+const videoTitle = "<%= videoTitle %>";
+
+function saveToHistory(videoId, channelId, channelName, videoTitle) {
+    let history = getHistoryFromCookies();
+
+    const historyIndex = history.findIndex(track => track.videoId === videoId);
+
+    if (historyIndex !== -1) {
+        history.splice(historyIndex, 1);
+    }
+
+    if (history.length >= 10) {
+        history.shift();
+    }
+
+    history.push({ videoId, channelId, channelName, videoTitle });
+
+    document.cookie = `wakametubehistory=${encodeURIComponent(JSON.stringify(history))}; path=/; max-age=31536000`;
+}
+
+function getHistoryFromCookies() {
+    const historyCookie = document.cookie.split('; ').find(row => row.startsWith('wakametubehistory='));
+    if (historyCookie) {
+        const cookieValue = historyCookie.split('=')[1];
+        try {
+            return JSON.parse(decodeURIComponent(cookieValue));
+        } catch (error) {
+            console.error('Error parsing history cookie:', error);
+            return [];
+        }
+    }
+    return [];
+}
+  
+document.addEventListener('DOMContentLoaded', () => {
+    saveToHistory(videoId, channelId, channelName, videoTitle);
+});
+  
+function toggleFavorite(videoId, channelId, channelName, videoTitle) {
+    let favorites = getFavoritesFromCookies();
+    
+    const favoriteIndex = favorites.findIndex(track => track.videoId === videoId);
+
+    if (favoriteIndex === -1) {
+        if (favorites.length >= 10) {
+        favorites.shift();
+        }
+        favorites.push({ videoId, channelId, channelName, videoTitle });
+        alert('お気に入りに追加しました！');
+    } else {
+        favorites.splice(favoriteIndex, 1);
+        alert('お気に入りを解除しました！');
+    }
+
+    document.cookie = `wakametubefavorites=${encodeURIComponent(JSON.stringify(favorites))}; path=/; max-age=31536000`;
+
+}
+
+function getFavoritesFromCookies() {
+    const favoritesCookie = document.cookie.split('; ').find(row => row.startsWith('wakametubefavorites='));
+    if (favoritesCookie) {
+        const cookieValue = favoritesCookie.split('=')[1];
+        try {
+            return JSON.parse(decodeURIComponent(cookieValue));
+        } catch (error) {
+            console.error('Error parsing favorites cookie:', error);
+            return [];
+        }
+    }
+    return [];
+}
+
+$(function () {
+    $('#searchbox').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '/suggest',
+                data: { keyword: request.term },
+                success: function (data) {
+                    response(data);
+                }
+            });
+        },
+        delay: 1,
+        select: function (event, ui) {
+            $('#searchbox').val(ui.item.value);
+            $('form').submit();
+        }
+    });
+});
+</script>
+  </body>
+<script src="//accaii.com/wakametube/script.js" async></script><noscript><img src="//accaii.com/wakametube/script?guid=on"></noscript>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>url on wakametube-Custom</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+<div class="fu" id="border">
+        <b><p id="realtime"></p></b></div>
+</div>
+    <script id="_wauwnn">var _wau = _wau || []; _wau.push(["classic", "4fc3tv76l2", "wnn"]);</script> <script async src="//waust.at/c.js"></script>
+</head>
+<body>
+  <header>
+    <div class="banner">
+      <button class="btn btn-link" onclick="window.location.href='/home.pdf'">ホーム🏠</button>
+      <form class="d-flex" action="/s.pdf">
+        <input type="text" name="q" class="form-control" placeholder="検索..." required>
+      </form>
+    </div>
+  </header>
+  <br><br>
+    <h1>YouTubeのURLを入力してください！</h1>
+  <form id="urlForm2">
+    <input type="text" id="youtubeUrl" placeholder="YouTubeのURLを入力..." required>
+    <button type="submit" name="action" value="watch">再生！</button>
+    <br><br>
+</form>
+
+<script>
+    document.getElementById('urlForm2').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const url = document.getElementById('youtubeUrl').value;
+        const videoId = extractVideoId(url);
+        if (videoId) {
+            const action = event.submitter.value;
+            if (action === 'watch') {
+                window.location.href = `/w/${videoId}/5.pdf`;
+            } else if (action === 'comment') {
+                window.location.href = `/tool/n/comment/${videoId}`;
+            } else {
+                alert('Invalid action type');
+            }
+        } else {
+            alert('URLが無効です');
+        }
+    });
+
+    function extractVideoId(url) {
+        const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[1].length == 11) ? match[1] : null;
+    }
+    </script>
+
+<script type="text/javascript">
+(function(a,b,c,d,e,f,g){
+e='//d.nakanohito.jp/ua/uwa.js';
+a['UlGlobalObject']=d;a[d]=a[d]||function(){(a[d].q=a[d].q||[]).push(arguments)};
+a[d].l=1*new Date();
+f=b.createElement(c),g=b.getElementsByTagName(c)[0];
+f.async=1;f.src=e;g.parentNode.insertBefore(f,g)
+})(window,document,'script','_uao');
+
+_uao('init', '20155901', {oem_id: 1,fpf: true});
+_uao('set', 'lg_id', '');
+_uao('send', 'pv');
+</script>
+</body>
+<script src="//accaii.com/wakametube/script.js" async></script><noscript><img src="//accaii.com/wakametube/script?guid=on"></noscript>
+</html>

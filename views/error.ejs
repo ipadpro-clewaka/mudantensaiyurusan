@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>404 on wakametube-Custom</title>
+  <meta name="description" content="まっしろになっていく">
+  <meta property="og:title" content="わかめtube">
+  <meta property="og:description" content="まっしろになっていく">
+  <meta property="og:site_name" content="わかめtube | まっしろ">
+  <meta property="og:image" content="/banner.png">
+  <meta name="theme-color" content="#ff8181">
+  <link rel="shortcut icon" href="/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="shortcut icon" href="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <meta name="author" content="わかめtube | まっしろ">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<div class="fu" id="border">
+        <b><p id="realtime"></p></b></div>
+</div>
+    現在の利用者 <script id="_wauwnn">var _wau = _wau || []; _wau.push(["classic", "4fc3tv76l2", "wnn"]);</script> <script async src="//waust.at/c.js"></script>
+
+<body>
+ <header>
+   
+      </form>
+    </div>
+  </header>
+  <br>
+  <div id="error">
+    <p class="fs-1">このページは存在しません</p>
+    <p class="lh-1">ホームへ戻るか上の検索バーから検索してください</p><br>
+    <button onclick="location.href='/home.pdf'">ホームに戻る</button>
+  </div>
+
+<div class="search-bar">
+      <form action="/s.pdf" method="get">
+        <input type="text" name="q" id="searchbox" class="form-control" placeholder="検索..." required>
+        <button type="submit" class="btn btn-search">🔍</button>
+      </form>
+     </div>
+  <style>
+	a {
+		color: #ff8181;
+	}
+	
+	#error {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+    .search-bar {
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      padding-right: 120px;
+    }
+
+.btn-search {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      border-radius: 0;
+    }
+
+  </style>
+
+<script>
+$(function () {
+    $('#searchbox').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '/suggest',
+                data: { keyword: request.term },
+                success: function (data) {
+                    response(data);
+                }
+            });
+        },
+        delay: 1,
+        select: function (event, ui) {
+            $('#searchbox').val(ui.item.value);
+            $('form').submit();
+        }
+    });
+});
+</script>
+
+</body>
+<script src="//accaii.com/wakametube/script.js" async></script><noscript><img src="//accaii.com/wakametube/script?guid=on"></noscript>
+</html>

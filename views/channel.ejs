@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title><%= channel.author.name %> (wakametube-Custom)</title>
+  <meta name="description" content="<%= channel.description || channel.descriptionShort %>">
+  <meta property="og:title" content="<%= channel.author.name %>'s Channel">
+  <meta property="og:description" content="<%= channel.description || channel.descriptionShort || "" %>">
+  <meta property="og:site_name" content="わかめtube | まっしろ">
+  <meta property="og:image" content="<%= channel.author.bestAvatar.url.slice(21) %>">
+  <meta name="theme-color" content="#ff8181">
+  <link rel="shortcut icon" href="<%= channel.author.bestAvatar.url.slice(21) %>">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="author" content="わかめtube | まっしろになっていく">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<div class="fu" id="border">
+        <b><p id="realtime"></p></b></div>
+</div>
+  <script id="_wauwnn">var _wau = _wau || []; _wau.push(["classic", "4fc3tv76l2", "wnn"]);</script><script async src="//waust.at/c.js"></script>
+<body>
+  <header>
+    <div class="banner">
+      <button class="btn btn-link" onclick="window.location.href='/home.pdf'">ホーム🏠</button>
+      <!-- 他のボタンもここに追加できます -->
+      <a href="/home.pdf" class="navbar-brand">
+        <img width="30" src="<%= channel.author.bestAvatar.url.slice(21) %>"> <%= channel.author.name %>   
+      </a>
+
+    </div>
+  </header>
+  <div class="results">
+    <% channel.items.forEach(video => { %>
+    <div class="result-item"> 
+      <a href="/w/<%= video.id %>/5.pdf"><img src="<%= video.bestThumbnail.url.slice(19) %>" alt="<%= video.title %>"></a>
+      <div class="channel-name"><%= video.author.name %></div>
+      <div class="video-title"><%= video.title %></div>
+      <div class="video-meta"><%= video.duration %></div>
+    </div>
+    <% }); %>
+  </div>
+<div class="pagination">
+  <% if (page > 1) { %> <a class="btn position-absolute" style="left: 0; color: white; background-color: #ff8181;" href="/c.pdf/<%= channel.id %>?p=<%= page-1 %>">前のページ</a> <% } %>
+  <a class="btn position-absolute" style="right: 0; color: white; background-color: #ff8181;" href="/c.pdf/<%= channel.id %>?p=<%= page+1 %>">次のページ</a>
+ </div>
+
+<script type="text/javascript">
+(function(a,b,c,d,e,f,g){
+e='//d.nakanohito.jp/ua/uwa.js';
+a['UlGlobalObject']=d;a[d]=a[d]||function(){(a[d].q=a[d].q||[]).push(arguments)};
+a[d].l=1*new Date();
+f=b.createElement(c),g=b.getElementsByTagName(c)[0];
+f.async=1;f.src=e;g.parentNode.insertBefore(f,g)
+})(window,document,'script','_uao');
+
+_uao('init', '20155901', {oem_id: 1,fpf: true});
+_uao('set', 'lg_id', '');
+_uao('send', 'pv');
+</script>
+<script src="//accaii.com/wakametube/script.js" async></script><noscript><img src="//accaii.com/wakametube/script?guid=on"></noscript>
+</body>
+
+</html>

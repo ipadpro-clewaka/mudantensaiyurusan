@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title><%= query %> - (wakametube-Custom)</title>
+  <meta name="description" content="まっしろになっていく">
+  <meta property="og:title" content="わかめtube">
+  <meta property="og:description" content="まっしろになっていく">
+  <meta property="og:site_name" content="わかめtube | まっしろ">
+  <meta property="og:image" content="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <meta name="theme-color" content="#ff8181">
+  <link rel="shortcut icon" href="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="author" content="わかめtube | まっしろ">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<div class="fu" id="border">
+        <b><p id="realtime"></p></b></div>
+</div>
+   <script id="_wauwnn">var _wau = _wau || []; _wau.push(["classic", "4fc3tv76l2", "wnn"]);</script><script async src="//waust.at/c.js"></script>
+<body>
+  <header>
+    <div class="banner">
+      <button class="btn btn-link" onclick="window.location.href='/home.pdf'">ホーム🏠</button>
+      <button class="btn btn-link" onclick="window.location.href='/wakamehistory'">履歴</button>
+      <form class="d-flex" action="/s.pdf" method="get">
+          <input id="searchbox" name="q" class="form-control" type="text" placeholder="検索..." aria-label="Search" value="<%= query %>" required>
+      </form>
+
+     <h3 class="yukiyoutube">wakametube-Custom</h3>
+
+    </div>
+  </header>
+  <div class="results">
+    <% res.items.forEach(video => { %>
+      <% if (video.type === 'video') { %>
+        <div class="result-item">
+          <a href="/w/<%= video.id %>/5.pdf">
+            <img loading="lazy" src="/vi/<%= video.id %>/mqdefault.jpg" alt="<%= video.title %>">
+          </a>
+          <p class="channel-name"><a href="/c.pdf/<%= video.author.channelID %>"><%= video.author.name %></a></p>
+          <p class="video-title"><%= video.title %></p>
+          <p class="video-description"><%= video.description %></p>
+          <p class="video-meta"><%= video.uploadedAt %> - <%= video.duration %></p>
+          </div>
+      <% } else if (video.type === 'playlist') { %>
+        <div class="playresult-item">
+          <a href="/p/<%= video.playlistID %>">
+            <img style="opacity: 0.5" src="<%= video.firstVideo.bestThumbnail.url.slice(19) %>" alt="<%= video.title %>">
+          </a>
+          <p class="video-title">プレイリスト(<%= video.length %>本以上の動画)</p>
+          <p class="channel-name"><a href="/u/<%= video.owner.id %>"><%= video.owner.name %></a></p>
+        </div>
+      <% } else if (video.type === 'channel') { %>
+        <div class="result-item">
+          <a href="/c.pdf/<%= video.channelID %>">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1068152212_144x144.png" alt="<%= video.name %>">
+          </a>
+          <p class="video-title"><%= video.name %></p>
+          <p class="video-description"><%= video.description || video.descriptionShort %></p>
+          <p class="video-meta"><%= video.subscribers %> subscribers</p>
+        </div>
+      <% } %>
+    <% }); %>
+  </div>
+
+  <div class="pagination">
+    <a class="btn" href="/s.pdf?q=<%= query %>&p=<%= page+1 %>">下へ行く</a>
+  </div>
+
+      
+
+  <style>
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    a {
+      color: #ff8181;
+    }
+
+.yukiyoutube {
+  display: inline-block;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #7e6b37 0%, #e8dbb8 50%, #eec148 90%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: gradationTextAnimation;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite
+   }
+@keyframes colorChange {
+  0% {background-position: 100%;}
+  100% {background-position: 0%;}
+}
+
+.yukiyoutube {
+  display: inline-block;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #7e6b37 0%, #e8dbb8 50%, #eec148 90%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: gradationTextAnimation;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes gradationTextAnimation{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.yukiyoutube {
+    font-weight: bold;
+}
+.yukiyoutube {
+    position: fixed;
+    top: 0;
+    left: 50;
+}
+.yukiyoutube {
+       z-index: 9998; /* 一般的には大きな値を設定して他の要素より前面にする */
+}
+  </style>
+<script>
+$(function () {
+    $('#searchbox').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '/suggest',
+                data: { keyword: request.term },
+                success: function (data) {
+                    response(data);
+                }
+            });
+        },
+        delay: 1,
+        select: function (event, ui) {
+            $('#searchbox').val(ui.item.value);
+            $('form').submit();
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+(function(a,b,c,d,e,f,g){
+e='//d.nakanohito.jp/ua/uwa.js';
+a['UlGlobalObject']=d;a[d]=a[d]||function(){(a[d].q=a[d].q||[]).push(arguments)};
+a[d].l=1*new Date();
+f=b.createElement(c),g=b.getElementsByTagName(c)[0];
+f.async=1;f.src=e;g.parentNode.insertBefore(f,g)
+})(window,document,'script','_uao');
+
+_uao('init', '20155901', {oem_id: 1,fpf: true});
+_uao('set', 'lg_id', '');
+_uao('send', 'pv');
+</script>
+
+<script src="//accaii.com/wakametube/script.js" async></script><noscript><img src="//accaii.com/wakametube/script?guid=on"></noscript>
+</body>
+
+</html>
