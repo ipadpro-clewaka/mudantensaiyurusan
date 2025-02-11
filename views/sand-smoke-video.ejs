@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>{{ videotitle }}</title>
+    <title><%= videoData.videoTitle %>(sand-smoke-video&wakametube-custom)</title>
     <link rel="stylesheet" href="/css/ionicons.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.6/pure-min.css" />
     <link rel="stylesheet" href="/css/video-html.css">
@@ -40,12 +40,12 @@
 <body>
     <div class="navbar">
         <div class="navbar-logo">
-            <a href="/">
+            <a href="/home.pdf">
                 <img src="https://gitlab.com/mpdpa/icon/-/raw/main/IMG_0942.png" alt="YouTube Icon" />
             </a>
         </div>
 
-        <form class="navbar-search pure-form" action="/search" method="get">
+        <form class="navbar-search pure-form" action="/s.pdf" method="get">
             <fieldset>
                 <input
                     type="search"
@@ -110,19 +110,17 @@
     <div id="contents">
         <div id="player-container">
             <span class="video-player-area-a">
-                <video playsinline="" poster="https://img.youtube.com/vi/{{ g_videoid }}/0.jpg" id="player" controls="">
-                    <source src="{{ videourls[0] }}" />
+                <video playsinline="" poster="https://img.youtube.com/vi/<%= videoData.videoId %>/0.jpg" id="player" controls="">
+                    <source src="<%= videoData.stream_url %>" />
                 </video>
             </span>
-            <h2 id="video-title">{{ videotitle }}</h2>
-            <img id="author-icon" src="{{authoricon}}" /> <span id="channel-name">{{ author }}</span>
+            <h2 id="video-title"><%= videoData.videoTitle %></h2>
+            <img id="author-icon" src="<%= videoData.channelImage %>" /> <span id="channel-name"><%= videoData.channelName %></span>
             <p>
-                投稿日: <span id="published-date"></span> ・ 再生回数: <span class="view-count" id="view-count"></span> ・ 高評価数: <span class="like-count" id="like-count"></span>
+                投稿日: <span id="published-date"></span> ・ 再生回数:<%= videoData.videoViews %> ・ 高評価数:<%= videoData.likeCount %>
             </p>
 
             <div>
-                <button id="youtube-btn" onclick="changeVideoSource('youtube')">YouTubeから情報取得</button>
-                <button id="invidious-btn" onclick="changeVideoSource('invidious')">Firebaseから情報取得</button>
                 <button id="download-btn" onclick="downloadVideo()">動画をダウンロード</button>
                 <button id="share-btn" onclick="shareVideo('{{ g_videoid }}')">動画をシェア</button>
                 <button id="high-quality-btn" onclick="fetchHighQualityVideo()">高画質化</button>
@@ -396,13 +394,9 @@
 
         <div class="sidebar">
             <h3>関連動画</h3>
-            {% for re in res %}
-            <a href="/watch?v={{ re['id'] }}" class="thumbnail">
-                <img src="https://img.youtube.com/vi/{{ re['id'] }}/0.jpg" alt="関連動画" />
-                <div class="thumbnail-text">
-                    <p class="title Padding">{{ re["title"] }}</p>
-                    <p class="related-videos-title channel-name">{{ re["author"] }}</p>
-                    <p class="video-info view-count">{{ re["viewCount"] }}</p>
+    <div class="iframe-container">
+<iframe src="/videores/<%= videoId %>" scrolling="yes"></iframe>
+    </div>
                 </div>
             </a>
             {% endfor %}
