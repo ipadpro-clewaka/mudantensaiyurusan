@@ -181,7 +181,7 @@ app.get('/yuki-y/:id', async (req, res) => {
         const response = await axios.get(`https://wataamee.glitch.me/api/${videoId}?token=wakameoishi`);
         const videoData = response.data;
 
-        res.render('yuki-y-watch', { videoData, videoId });
+        res.render('sand-smoke-video', { videoData, videoId });
    } catch (error) {
         res.status(500).render('matte', { 
       videoId, 
