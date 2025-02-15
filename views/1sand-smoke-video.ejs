@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+<meta name="thumbnail" content="/vi/<%= videoData.videoId %>/maxres.jpg">
+<meta property="og:site_name" content="<%= videoData.channelName %> | wakametube-custom">
+<meta property="og:url" content="inv.nadeko.net/watch?v=GP_L2JfkFYg">
+<meta property="og:title" content="<%= videoData.videoTitle %>">
+<meta property="og:image" content="/vi/<%= videoData.videoId %>/maxres.jpg">
+<meta property="og:type" content="video.other">
+<!-- This shouldn't be empty, ever. -->
+<meta property="og:video" content="<%= videoData.stream_url %>"> 
+<meta property="og:video:url" content="<%= videoData.stream_url %>">
+<meta property="og:video:secure_url" content="<%= videoData.stream_url %>">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="640">
+<meta property="og:video:height" content="360">
+<meta name="twitter:card" content="player">
+<link rel="alternate" href="https://www.youtube.com/watch?v=<%= videoData.videoId %>">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/video.js/video-js.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-http-source-selector/videojs-http-source-selector.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-markers/videojs.markers.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-share/videojs-share.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-vtt-thumbnails/videojs-vtt-thumbnails.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-mobile-ui/videojs-mobile-ui.css?v=d75d860">
+<link rel="stylesheet" href="https://inv5.nadeko.net/css/player.css?v=d75d860">
+
+<script src="https://inv5.nadeko.net/videojs/video.js/video.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-mobile-ui/videojs-mobile-ui.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-contrib-quality-levels/videojs-contrib-quality-levels.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-http-source-selector/videojs-http-source-selector.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-markers/videojs-markers.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-share/videojs-share.js?v=d75d860"></script>
+<script src="https://inv5.nadeko.net/videojs/videojs-vtt-thumbnails/videojs-vtt-thumbnails.js?v=d75d860"></script>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://inv5.nadeko.net/videojs/videojs-vr/videojs-vr.css?v=d75d860">
+    <script src="https://inv5.nadeko.net/videojs/videojs-vr/videojs-vr.js?v=d75d860"></script>
+
+
+<title><%= videoData.videoTitle %> - wakametube-custom</title>
+
+<!-- Description expansion also updates the 'Show more' button to 'Show less' so we're going to need to do it here in order to allow for translations. -->
+<style> #descexpansionbutton ~ label > a::after { content: "Show more" } #descexpansionbutton:checked ~ label > a::after { content: "Show less" } </style>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://inv.nadeko.net/apple-touch-icon.png?v=d75d860">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://inv.nadeko.net/favicon-32x32.png?v=d75d860">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://inv.nadeko.net/favicon-16x16.png?v=d75d860">
+        <link rel="manifest" href="https://inv.nadeko.net/site.webmanifest?v=d75d860">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=d75d860" color="#575757">
+        <meta name="msapplication-TileColor" content="#575757">
+        <meta name="theme-color" content="#575757">
+        <link title="Invidious" type="application/opensearchdescription+xml" rel="search" href="/opensearch.xml">
+        <link rel="stylesheet" href="https://inv5.nadeko.net/css/pure-min.css?v=d75d860">
+        <link rel="stylesheet" href="https://inv5.nadeko.net/css/grids-responsive-min.css?v=d75d860">
+        <link rel="stylesheet" href="https://inv5.nadeko.net/css/ionicons.min.css?v=d75d860">
+        <link rel="stylesheet" href="https://inv5.nadeko.net/css/default.css?v=d75d860">
+        <link rel="stylesheet" href="https://inv5.nadeko.net/css/carousel.css?v=d75d860">
+        <script src="https://inv5.nadeko.net/js/_helpers.js?v=d75d860"></script>
+    </head>
+
+    <body class="dark-theme">
+        <span style="display:none" id="dark_mode_pref">dark</span>
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-xl-20-24" id="contents">
+                <div class="pure-g navbar h-box">
+                    
+                        <div class="pure-u-1 pure-u-md-4-24">
+                            <a href="/home.pdf" class="index-link pure-menu-heading">wakametube-custom</a>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-12-24 searchbar">
+                            <form class="pure-form" action="/s.pdf" method="get">
+    <fieldset>
+        <input type="search" id="searchbox" autocorrect="off" autocapitalize="none" spellcheck="false" name="q" placeholder="search" title="search" value="">
+    </fieldset>
+    <button type="submit" id="searchbutton" aria-label="search">
+        <i class="icon ion-ios-search"></i>
+    </button>
+</form>
+
+                        </div>
+                    
+                            
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+<script id="video_data" type="application/json"> { "id": "GP_L2JfkFYg", "index": null, "plid": null, "length_seconds": 173.0, "play_next": false, "next_video": "3Tn30ZTHtRo", "youtube_comments_text": "View YouTube comments", "reddit_comments_text": "View Reddit comments", "reddit_permalink_text": "View more comments on Reddit", "comments_text": "View {commentCount} comments", "hide_replies_text": "Hide replies", "show_replies_text": "Show replies", "params": { "annotations": false, "preload": true, "autoplay": true, "comments": [ "youtube", "" ], "continue": false, "continue_autoplay": true, "controls": true, "listen": false, "local": false, "preferred_captions": [ "", "", "" ], "player_style": "invidious", "quality": "dash", "quality_dash": "720p", "raw": false, "related_videos": true, "speed": 1.0, "video_end": -1, "video_loop": false, "extend_desc": true, "video_start": 0, "volume": 100, "vr_mode": true, "save_player_pos": true }, "preferences": { "annotations": false, "annotations_subscribed": false, "preload": true, "autoplay": true, "automatic_instance_redirect": false, "captions": [ "", "", "" ], "comments": [ "youtube", "" ], "continue": false, "continue_autoplay": true, "dark_mode": "dark", "latest_only": false, "listen": false, "local": false, "watch_history": true, "vr_mode": true, "show_nick": true, "locale": "en-US", "region": "CL", "max_results": 40, "notifications_only": false, "player_style": "invidious", "quality": "dash", "quality_dash": "720p", "default_home": "Popular", "feed_menu": [ "Popular", "Trending", "Subscriptions", "Playlists", "History" ], "related_videos": true, "sort": "published", "speed": 1.0, "thin_mode": false, "unseen_only": false, "video_loop": false, "extend_desc": true, "volume": 100, "save_player_pos": true }, "premiere_timestamp": null, "vr": false, "projection_type": "RECTANGULAR", "local_disabled": false, "support_reddit": true } </script>
+
+<div id="player-container" class="h-box">
+    <video style="outline:none;width:100%;background-color:#000" playsinline poster="/vi/<%= videoData.videoId %>/maxres.jpg" id="player" class="on-video_player video-js player-style-invidious" preload="auto" autoplay controls>
+    
+        
+            
+                <source src="https://inv-eu1-c.nadeko.net/api/manifest/dash/id/<%= videoData.videoId %>?local=true&unique_res=1&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=" type='application/dash+xml' label="dash">
+            
+
+            
+                <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" label="medium" selected="false">
+                
+                <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=&local=true" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" hidequalityoption="true">
+                
+            
+        
+
+        
+
+        
+    
+        
+    
+</video>
+
+<script id="player_data" type="application/json"> { "aspect_ratio": "16:9", "title": "<%= videoData.videoTitle %>", "description": "“ </script>
+<script src="https://inv.nadeko.net/js/player.js?v=d75d860"></script>
+
+</div>
+
+<div class="h-box">
+    <h1>
+        <%= videoData.videoTitle %>
+        
+
+            </a>
+        
+    </h1>
+
+    
+
+    
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-lg-1-5">
+        <div class="h-box">
+            <span id="watch-on-youtube">
+                <a id="link-yt-watch" rel="noreferrer noopener" data-base-url="https://www.youtube.com/watch?v=GP_L2JfkFYg" href="https://www.youtube.com/watch?v=GP_L2JfkFYg"></a>
+                (<a id="link-yt-embed" rel="noreferrer noopener" data-base-url="https://www.youtube.com/embed/GP_L2JfkFYg" href="https://www.youtube.com/embed/GP_L2JfkFYg"></a>)
+            </span>
+
+
+            <p id="embed-link">
+            </p>
+
+            <p id="annotations">
+                
+                    <a href="/watch?v=GP_L2JfkFYg&iv_load_policy=1">
+                        Show annotations
+                    </a>
+                
+            </p>
+
+
+            <p id="views"><i class="icon ion-ios-eye"></i> <%= videoData.videoViews %></p>
+            <p id="likes"><i class="icon ion-ios-thumbs-up"></i> <%= videoData.likeCount %></p>
+            <p id="dislikes" style="display: none; visibility: hidden;"></p>
+            
+                
+            </p>
+                
+            
+            
+            <p id="wilson" style="display: none; visibility: hidden;"></p>
+            <p id="rating" style="display: none; visibility: hidden;"></p>
+            <p id="engagement" style="display: none; visibility: hidden;"></p>
+            
+        </div>
+    </div>
+
+    <div class="pure-u-1 pure-u-lg-3-5">
+
+        <div class="pure-g h-box flexible title">
+            <div class="pure-u-1-2 flex-left flexible">
+                <a href="/c.pdf/<%= videoData.channelId %>">
+                    <div class="channel-profile">
+                        
+                            <img src="<%= videoData.channelImage %>" alt="" />
+                        
+                        <span id="channel-name"><%= videoData.channelName %>&nbsp;<i class="icon ion ion-md-checkmark-circle"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="pure-u-1-2 flex-right flexible button-container">
+                <div class="pure-u">
+
+
+                </div>
+            </div>
+        </div>
+
+                
+            </p>
+
+            <div id="description-box"> <!-- Description -->
+             <p><%- (videoData.videoDes || "").replace(/\n/g, "<br>") %></p>
+                
+            </div>
+
+            <hr>
+
+            
+            <div id="comments" class="comments">
+            <iframe src="/comment/<%= videoId %>" scrolling="yes"></iframe>
+                
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="pure-u-1 pure-u-lg-1-5">
+            
+
+            
+                <div class="h-box">
+                    
+                        <div >
+                            <div class="pure-control-group">
+                                <label for="continue">Play next by default: </label>
+                                <input name="continue" id="continue" type="checkbox" >
+                            </div>
+                            <hr>
+                        </div>
+                    
+
+                    
+                        
+                            <div class="pure-u-1">
+
+                            <div class="thumbnail">
+                                    <iframe src="/videores/<%= videoId %>" scrolling="yes"></iframe>
+                            </div>
+                        
+                    
+                </div>
+            
+        </div>
+    
+</div>
+<script src="/js/comments.js?v=d75d860"></script>
+<script src="/js/watch.js?v=d75d860"></script>
+
+
+            
+
+        </div>
+    </div>
+    <script src="/js/handlers.js?v=d75d860"></script>
+    <script src="/js/themes.js?v=d75d860"></script>
+    
+</body>
+</html>
