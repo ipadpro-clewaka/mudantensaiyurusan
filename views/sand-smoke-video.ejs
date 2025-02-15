@@ -102,14 +102,6 @@
                 <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" label="medium" selected="false">
                 
                 <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=&local=true" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" hidequalityoption="true">
-                
-            
-        
-
-        
-
-        
-    
         
     
 </video>
@@ -135,23 +127,6 @@
 
 <div class="pure-g">
     <div class="pure-u-1 pure-u-lg-1-5">
-        <div class="h-box">
-            <span id="watch-on-youtube">
-                <a id="link-yt-watch" rel="noreferrer noopener" data-base-url="https://www.youtube.com/watch?v=GP_L2JfkFYg" href="https://www.youtube.com/watch?v=GP_L2JfkFYg"></a>
-                (<a id="link-yt-embed" rel="noreferrer noopener" data-base-url="https://www.youtube.com/embed/GP_L2JfkFYg" href="https://www.youtube.com/embed/GP_L2JfkFYg"></a>)
-            </span>
-
-
-            <p id="embed-link">
-            </p>
-
-            <p id="annotations">
-                
-                    <a href="/watch?v=GP_L2JfkFYg&iv_load_policy=1">
-                        Show annotations
-                    </a>
-                
-            </p>
 
 
             <p id="views"><i class="icon ion-ios-eye"></i> <%= videoData.videoViews %></p>
@@ -203,30 +178,26 @@
             <hr>
 
             
-            <div id="comments" class="comments">
-            <iframe src="/comment/<%= videoId %>" scrolling="yes"></iframe>
-                
-            </div>
-        </div>
+    <div class="comment-box">
+    <h2>コメント</h2>
+    <div class="iframe-container">
+      <iframe src="/comment/<%= videoId %>" scrolling="yes"></iframe>
     </div>
+  </div>
 
     
-        <div class="pure-u-1 pure-u-lg-1-5">
+  <div class="pure-u-1 pure-u-lg-1-5">
             
-                    
-
-                    
                         
-                            <div class="pure-u-1">
-
-                            <div class="thumbnail">
-                                    <iframe src="/videores/<%= videoId %>" scrolling="yes"></iframe>
-                            </div>
-                        
-                    
-                </div>
-            
-        </div>
+ <div class="pure-u-1">
+<div class="thumbnail">
+<h2>関連動画</h2>
+ <div class="tube-box">
+<iframe src="/videores/<%= videoId %>" scrolling="yes"></iframe>
+    </div>
+  </div>
+    
+        
     
 </div>
 <script src="/js/comments.js?v=d75d860"></script>
@@ -239,6 +210,209 @@
     </div>
     <script src="/js/handlers.js?v=d75d860"></script>
     <script src="/js/themes.js?v=d75d860"></script>
-    
+
+<style>
+	* {
+		--plyr-color-main: #217DD9;
+	}
+
+	a {
+		color: #217DD9;
+	}
+  .card {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header, .card-footer {
+  background-color: #217DD9;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.card-channel {
+  padding: 7px;
+  height: 49px;
+}
+.card-channel p{
+  margin-left: 65px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h5 {
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  margin: 0;
+  white-space: pre-line;
+}
+video {
+  width: 100%;
+  height:100%;
+  }
+.card-title h4 {
+  font-size: 1.6rem; 
+  color: #333;
+  margin: 10px 0; 
+}
+
+.card-title .container {
+  padding: 0 15px;
+}
+
+.toolcard-header {
+  background-color: #FFF5F7;
+  padding: 10px 10px;
+  border-bottom: 0.5px solid #f8e58c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+        .container {
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .container .text {
+            margin-left: 10px;
+        }
+    .comment-box {
+      background-color: #ffffff;
+      width: 85%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      box-sizing: border-box;
+    }
+
+    .comment-box h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 900px;
+      border: none;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .tube-box {
+      background-color: ##56C919;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      box-sizing: border-box;
+    }
+.video-container {
+    position: relative;
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10;
+}
+
+.loading-indicator img {
+    width: 75px;
+    height: 75px;
+}
+
+.yukiyoutube {
+  display: inline-block;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #7e6b37 0%, #e8dbb8 50%, #eec148 90%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: gradationTextAnimation;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite
+   }
+@keyframes colorChange {
+  0% {background-position: 100%;}
+  100% {background-position: 0%;}
+}
+
+.yukiyoutube {
+  display: inline-block;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #7e6b37 0%, #e8dbb8 50%, #eec148 90%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: gradationTextAnimation;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes gradationTextAnimation{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.yukiyoutube {
+    font-weight: bold;
+}
+.yukiyoutube {
+    position: fixed;
+    top: 0;
+    left: 50;
+}
+.yukiyoutube {
+       z-index: 9998; /* 一般的には大きな値を設定して他の要素より前面にする */
+}
+  </style>
 </body>
 </html>
