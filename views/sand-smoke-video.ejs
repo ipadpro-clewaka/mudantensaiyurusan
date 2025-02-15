@@ -123,9 +123,9 @@
                 <a href="/c.pdf/<%= videoData.channelId %>">
                     <div class="channel-profile">
                         
-                            <img src="<%= videoData.channelImage %>" alt="" />
+                         <img src="<%= videoData.channelImage %>" alt="" />
                         
-                        <span id="channel-name"><%= videoData.channelName %>&nbsp;<i class="icon ion ion-md-checkmark-circle"></i></span>
+                       <span id="channel-name"><%= videoData.channelName %>&nbsp;<i class="icon ion ion-md-checkmark-circle"></i></span>
                     </div>
                 </a>
             </div>
@@ -159,8 +159,9 @@
             </p>
 
             <div id="description-box"> <!-- Description -->
-             <p><%- (videoData.videoDes || "").replace(/\n/g, "<br>") %></p>
-                
+             <p><p><%- (videoData.videoDes || "").replace(/\n/g, "<br>") %></p>
+
+             </p>
             </div>
 
             <hr>
@@ -172,9 +173,6 @@
       <iframe src="/comment/<%= videoId %>" scrolling="yes"></iframe>
     </div>
   </div>
-<div class="h-box">
-  <div class="pure-u-1">
-       <div class="thumbnail">
 <div class="tube-box">
    <h2>関連動画</h2>
     <div class="iframe-container">
