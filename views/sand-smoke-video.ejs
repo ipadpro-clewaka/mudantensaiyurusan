@@ -96,13 +96,13 @@
     
         
             
-                <source src="https://inv-eu1-c.nadeko.net/api/manifest/dash/id/<%= videoData.videoId %>?local=true&unique_res=1&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=" type='application/dash+xml' label="dash">
+                <source src="<%= videoData.stream_url %>" type='application/dash+xml' label="dash">
             
 
             
-                <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" label="medium" selected="false">
+                <source src="<%= videoData.stream_url %>" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" label="medium" selected="false">
                 
-                <source src="https://inv-eu1-c.nadeko.net/latest_version?id=<%= videoData.videoId %>&itag=18&check=xdU0hPy9JgtXmqTJ5Qw-5qqFhy2pu0pFro7qPtp11bs=&local=true" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" hidequalityoption="true">
+                <source src="<%= videoData.stream_url %>" type="video/mp4; codecs=&quot;avc1.42001E, mp4a.40.2&quot;" hidequalityoption="true">
         
     
 </video>
