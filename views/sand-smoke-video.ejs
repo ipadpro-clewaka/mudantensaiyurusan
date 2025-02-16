@@ -75,20 +75,9 @@
                     
                         <div class="pure-u-1 pure-u-md-4-24">
                             <a href="/home.pdf" class="index-link pure-menu-heading">wakametube-custom</a>
-                            <button class="btn btn-link" id="menu-btn" style="position: absolute; right: 10px;">いろいろ</button>
+                            <button class="btn btn-link" onclick="window.location.href='/w-ymod/<%= videoData.videoId %>'">以前の外観で見る</button>
                         </div>
 
-<nav id="side-menu" class="side-menu">
-    <ul>
-        <li><a href="<%= videoData.stream_url %>" download>動画をダウンロード</a></li>
-        <li><a href="/vi/<%= videoData.videoId %>/maxresdefault.jpg" target="_blank">サムネイルをダウンロード</a></li>
-        <li><a href="https://flourishing-choux-fdd15b.netlify.app" target="_blank">ターボワープで見る</a></li>
-        <li><a href="/w-ymod/<%= videoData.videoId %>">以前の外観で見る</a></li>
-        <li><a href="/www/<%= videoData.videoId %>">高画質再生</a></li>
-        <li><a href="/ll/<%= videoData.videoId %>">音だけ再生</a></li>
-    </ul>
-</nav>
-<div id="overlay" class="overlay"></div>
                         <div class="pure-u-1 pure-u-md-12-24 searchbar">
                             <form class="pure-form" action="/s.pdf" method="get">
     <fieldset>
