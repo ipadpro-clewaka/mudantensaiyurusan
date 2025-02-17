@@ -127,7 +127,7 @@ app.get('/embed/:id/', async (req, res) => {
         const videoData = response.data;
         console.log(videoData);
 
-        res.render(`login/embed`, { videoData, videoId, baseUrl });
+        res.render(`login/embed.ejs`, { videoData, videoId, baseUrl });
   } catch (error) {
         res.status(500).render(`login/matte`, { 
       videoId, baseUrl,
