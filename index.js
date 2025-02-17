@@ -85,6 +85,7 @@ app.post('/logout', (req, res) => {
 
 //埋め込み用(取得)
 app.get('/embed/:id/', async (req, res) => {
+if (req.cookies.massiropass !== 'ok') {
     const videoId = req.params.id;
     const server = req.query.server || '0';
     const serverUrls = {
@@ -126,8 +127,7 @@ app.get('/embed/:id/', async (req, res) => {
         const response = await axios.get(`${baseUrl}/api/${videoId}`);
         const videoData = response.data;
         console.log(videoData);
-
-        res.render(`login/embed.ejs`, { videoData, videoId, baseUrl });
+	res.render(`login/embed.ejs`,{ videoData, videoId, baseUrl });
   } catch (error) {
         res.status(500).render(`login/matte`, { 
       videoId, baseUrl,
@@ -135,6 +135,7 @@ app.get('/embed/:id/', async (req, res) => {
       details: error.message 
     });
   }
+}
 });
 
 //以前の外観
