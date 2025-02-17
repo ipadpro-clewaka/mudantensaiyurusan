@@ -331,6 +331,11 @@ app.get("/home.pdf3", (req, res) => {
    res.sendFile(__dirname + "/views/keikoku.html");
 });
 
+// turbotube
+app.get("/turbotube2", (req, res) => {
+   res.sendFile(__dirname + "/views/index.html");
+});
+
 app.get("/difserver/:id", async (req, res) => {
   let videoId = req.params.id || req.query.v;
   try {
