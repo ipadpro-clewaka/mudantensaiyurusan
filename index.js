@@ -303,11 +303,7 @@ app.get("/videodl", (req, res) => {
 
 // 偽 ブロックされました
 app.get("/home.pdf2", (req, res) => {
-  let url = location.href;
-  if (url == "http://xn--gck2a9cve1bk0490dnl4c.cky.cl/") {
-  res.sendFile(__dirname + "/views/husei.html");
-} else {
-res.sendFile(__dirname + "/views/Ridairekuto.html");
+  res.sendFile(__dirname + "/views/Ridairekuto.html");
 });
 
 // yukiyoutube
