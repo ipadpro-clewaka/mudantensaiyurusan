@@ -142,7 +142,7 @@ app.get('/w-ymod/:id/', async (req, res) => {
 app.get('/www/:id', async (req, res) => {
   const videoId = req.params.id;
     try {
-        const response = await axios.get(`https://wataamee.glitch.me/api/${videoId}?token=wakameoishi`);
+        const response = await axios.get(`https://wtserver2.glitch.me/api/${videoId}?token=wakameoishi`);
         const videoData = response.data;
 
         res.render('highquo', { videoData, videoId });
