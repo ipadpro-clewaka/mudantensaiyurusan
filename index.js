@@ -68,7 +68,7 @@ app.post('/login', (req, res) => {
         res.cookie('massiropass', 'ok', { maxAge: 5 * 24 * 60 * 60 * 1000, httpOnly: true });
         return res.redirect('/home.pdf2');
         } else {
-            res.render('login', { error: 'パスワードはwakameに変更されました' });
+            res.render('login', { error: 'ユーザー名とパスワードにwakameを入れる' });
         }
     }
 });
