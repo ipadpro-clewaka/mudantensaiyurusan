@@ -63,8 +63,8 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
     const password = req.body.password;
     const yuzamei = req.body.yuzamei;
-    if (password === 'wakame'|| password === 'gomimaedasine'){
-	if (yuzamei === 'wakkame'|| yuzamei === 'gomimaedasine'){
+    if (password === 'wakame'|| password === 'wakame'){
+	if (yuzamei === 'wakkame'|| yuzamei === 'wakame'){
         res.cookie('massiropass', 'ok', { maxAge: 5 * 24 * 60 * 60 * 1000, httpOnly: true });
         return res.redirect('/home.pdf2');
         } else {
