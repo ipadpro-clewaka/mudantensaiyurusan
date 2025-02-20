@@ -333,7 +333,12 @@ app.get("/home.pdf3", (req, res) => {
 
 // turbotube
 app.get("/turbotube2", (req, res) => {
-   res.sendFile(__dirname + "/index.html");
+   res.sendFile(__dirname + "/views/umekomi4.html");
+});
+
+// turbotubeリンク
+app.get("/turbotuberinnku", (req, res) => {
+   res.sendFile(__dirname + "/views/turbotuberinnku.html");
 });
 
 app.get("/difserver/:id", async (req, res) => {
