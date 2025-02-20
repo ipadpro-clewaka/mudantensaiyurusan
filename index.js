@@ -62,12 +62,11 @@ app.get('/login', (req, res) => {
 // パスワード確認
 app.post('/login', (req, res) => {
     const password = req.body.password;
+    const yuzamei = req.body.yuzamei;
     if (password === 'wakame'|| password === 'gomimaedasine'){
+	if (yuzamei === 'wakkame'|| yuzamei === 'gomimaedasine'){
         res.cookie('massiropass', 'ok', { maxAge: 5 * 24 * 60 * 60 * 1000, httpOnly: true });
         return res.redirect('/home.pdf2');
-    } else {
-        if (password === 'ohana') {
-            return res.redirect('https://ohuaxiehui.webnode.jp');
         } else {
             res.render('login', { error: 'パスワードはwakameに変更されました' });
         }
