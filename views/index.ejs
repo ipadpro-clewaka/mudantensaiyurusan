@@ -27,7 +27,7 @@
 
 <header>
     <div class="banner">
-      <button class="btn btn-link" onclick="window.location.href='/videodl'">downloader<br>📺</button>
+      <button class="btn btn-link" onclick="window.location.href='/videodl'">new!downloader<br>📺</button>
       <button class="btn btn-link" onclick="window.location.href='/wakameokini'">videoお気に入り<br>⭐️</button>
       <button class="btn btn-link" onclick="window.location.href='/chat'">チャット<br>💬</button>
       <button class="btn btn-link" onclick="window.location.href='/turbotuberinnku'">turbotube<br>T</button>
@@ -78,6 +78,7 @@
     </div>
   </div>
 
+ <h3>トップvideo↓</h3>
   <div class="results">
     <% topVideos.forEach(([videoId, { count, videoTitle, channelName, channelId }], index) => { %>
         <div class="result-item">
